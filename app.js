@@ -15,9 +15,8 @@ app.get('/api/test', (req, res) => {
     res.send([{ id: 1, text: 'Test Object' }]);
 });
 
-const port = process.env.PORT || 3000; // This is the port that the server will run on
-if (app.listen(PORT, () =>
-    console.log('listening on http://localhost:' + port + '...')
-)){
-    console.log('Server started');
-}
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+    console.log('Server listening on port ' + port);
+});
+
