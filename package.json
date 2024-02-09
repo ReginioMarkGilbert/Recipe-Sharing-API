@@ -1,0 +1,12 @@
+{
+  "name": "recipe-sharing-api",
+  "version": "1.0.0",
+  "description": "Group Performance Test #1: Development of a Restful API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
