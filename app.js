@@ -16,7 +16,7 @@ app.get('/api/test', (req, res) => {
 });
 
 const port = process.env.PORT || 3000;
-if (app.listen(PORT, () =>
+if (app.listen(port, () =>
     console.log('listening on http://localhost:' + port + '...')
 )){
     console.log('Server started');
