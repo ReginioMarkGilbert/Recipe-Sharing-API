@@ -48,10 +48,10 @@ app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
 
-mongoose.connect('mongodb+srv://<user>:<password>.fvrldkc.mongodb.net/?retryWrites=true&w=majority') // TODO need to manage this url string securely, using <user> and <password> for the commit
+mongoose.connect(process.env.MONGODB_URI)
 // MongoDB Atlas URI for connecting to a cloud database instance
 .then(() => {
     console.log('Connected to MongoDB')
 }).catch((err) => {
     console.log(err)
-})
+});
