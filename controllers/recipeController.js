@@ -35,18 +35,23 @@ exports.getRecipeById = async (req, res) => {
     }
 };
 
-// Get recipes by tag
-// exports.getRecipesByTag = async (req, res) => {
-//     try {
-//         const recipes = await Recipe.find({ tags: req.params.tag });
-//         if (!recipes.length) {
-//             return res.status(404).json({ message: 'No recipes found with that tag' });
-//         }
-//         res.json(recipes);
-//     } catch (err) {
-//         res.status(500).json({ message: err.message });
-//     }
-// };
+// Get a single recipe by title
+exports.getRecipeByTitle = async (req, res) => {
+    try {
+        // Remove spaces and convert to lowercase
+        const title = req.params.title.trim().replace(/\s/g, "").toLowerCase();
+        const regex = new RegExp("^" + title.split("").join("\\s*") + "$", "i");
+        const recipe = await Recipe.findOne({ title: { $regex: regex } });
+        if (!recipe) {
+            return res.status(404).json({ message: 'Recipe not found' });
+        }
+        res.json(recipe);
+    } catch (err) {
+        res.status(500).json({ message: err.message });
+    }
+};
+
+
 
 // Get recipes by tag
 exports.getRecipesByTag = async (req, res) => {
