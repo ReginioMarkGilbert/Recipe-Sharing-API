@@ -1,4 +1,3 @@
-// controllers/recipeController.js
 const Recipe = require('../models/Recipe');
 
 // Controller methods for handling recipes
@@ -33,6 +32,37 @@ exports.getRecipeById = async (req, res) => {
         res.json(recipe);
     } catch (err) {
         res.status(500).json({ message: err.message });
+    }
+};
+
+// Get recipes by tag
+// exports.getRecipesByTag = async (req, res) => {
+//     try {
+//         const recipes = await Recipe.find({ tags: req.params.tag });
+//         if (!recipes.length) {
+//             return res.status(404).json({ message: 'No recipes found with that tag' });
+//         }
+//         res.json(recipes);
+//     } catch (err) {
+//         res.status(500).json({ message: err.message });
+//     }
+// };
+
+// Get recipes by tag
+exports.getRecipesByTag = async (req, res) => {
+    try {
+        // Extract and sanitize the tag parameter from the request
+        const tag = req.params.tag.trim().replace(/\s/g, "").toLowerCase();
+        // Create a regular expression to match the tag with case-insensitivity
+        const regex = new RegExp("^" + tag.split("").join("\\s*") + "$", "i");
+        const recipes = await Recipe.find({ tags: { $regex: regex } }); // Find recipes that have tags matching the regex        
+        if (!recipes) {
+            return res.status(404).json({ message: 'No recipes found with that tag' });
+        }
+        res.json(recipes);
+    } catch (err) {
+        res.status(500)
+        .json({ message: err.message });
     }
 };
 

@@ -22,6 +22,7 @@
  * Environment Variables:
  * - PORT: The port number on which the Express server will listen.
  */
+require('dotenv').config({ path: './vars/.env' });
 
 const express = require('express');
 const mongoose = require('mongoose');
