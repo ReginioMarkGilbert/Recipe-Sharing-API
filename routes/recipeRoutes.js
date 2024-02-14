@@ -1,4 +1,3 @@
-// routes/recipeRoutes.js
 const express = require('express');
 const router = express.Router();
 const recipeController = require('../controllers/recipeController');
@@ -7,6 +6,7 @@ const recipeController = require('../controllers/recipeController');
 router.post('/recipes', recipeController.createRecipe); // Route to create a new recipe
 router.get('/recipes', recipeController.getAllRecipes); // Route to get all recipes
 router.get('/recipes/title/:title', recipeController.getRecipeByTitle); // Route to get a single recipe by title
+router.get('/recipes/ingredients/:ingredients', recipeController.searchByIngredients);
 router.get('/recipes/tags/:tag', recipeController.getRecipesByTag); // Route to get recipes by tag
 router.get('/recipes/:id', recipeController.getRecipeById); // Route to get a single recipe by ID
 router.put('/recipes/:id', recipeController.updateRecipe); // Route to update a recipe by ID

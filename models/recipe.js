@@ -16,6 +16,7 @@
     "tags": ["Italian", "Pasta"]
 }
 
+
  */
 
 const mongoose = require('mongoose');
@@ -36,6 +37,12 @@ const recipeSchema = new mongoose.Schema({
     tags: {
         type: [String]
     }
+});
+
+// Middleware to convert title to all caps before saving
+recipeSchema.pre('save', function(next) {
+    this.title = this.title.toUpperCase();
+    next();
 });
 
 module.exports = mongoose.model('Recipe', recipeSchema);
