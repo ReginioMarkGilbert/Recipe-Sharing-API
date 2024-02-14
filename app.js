@@ -23,6 +23,8 @@
  * - PORT: The port number on which the Express server will listen.
  */
 
+require('dotenv').config({ path: './vars/.env' });
+
 const express = require('express');
 const mongoose = require('mongoose');
 const recipeRoutes = require('./routes/recipeRoutes');
@@ -53,6 +55,7 @@ mongoose.connect(process.env.MONGODB_URI)
 .then(() => {
     console.log('Connected to MongoDB')
 }).catch((err) => {
+    console.error('Connection error: ' + err.message)
     console.log(err)
 });
 

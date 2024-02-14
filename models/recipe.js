@@ -9,12 +9,13 @@
  *  - tags: Optional tags to categorize the recipe (Array of Strings)
  * 
 * Example:
- *  {
- *    title: "Spaghetti Carbonara",
- *    ingredients: ["Spaghetti", "Eggs", "Pancetta", "Parmesan Cheese", "Black Pepper"],
- *    instructions: "Cook the spaghetti until it's firm. In a separate pan, fry the pancetta until crispy. Whisk the eggs and cheese together. Drain the spaghetti and mix it with the eggs and cheese mixture. Add the pancetta and black pepper. Serve immediately.",
- *    tags: ["Italian", "Pasta"]
- *  }
+{
+    "title": "Spaghetti Carbonara",
+    "ingredients": ["Spaghetti", "Eggs", "Pancetta", "Parmesan Cheese", "Black Pepper"],
+    "instructions": "Cook the spaghetti until it's firm. In a separate pan, fry the pancetta until crispy. Whisk the eggs and cheese together. Drain the spaghetti and mix it with the eggs and cheese mixture. Add the pancetta and black pepper. Serve immediately.",
+    "tags": ["Italian", "Pasta"]
+}
+
 
  */
 
@@ -36,6 +37,12 @@ const recipeSchema = new mongoose.Schema({
     tags: {
         type: [String]
     }
+});
+
+// Middleware to convert title to all caps before saving
+recipeSchema.pre('save', function(next) {
+    this.title = this.title.toUpperCase();
+    next();
 });
 
 module.exports = mongoose.model('Recipe', recipeSchema);
