@@ -10,9 +10,7 @@
 ## 💬 About the Application
 
 The Recipe-Sharing-API, built with Node.js and Express, to share and manage recipes through a RESTful API. It supports CRUD (Create, Read, Update, Delete) operations for recipes and incorporates advanced search functionalities. This API is designed with a focus on simplicity and efficiency, making it accessible for both developers and end-users.
-## 💬 About the Application
 
-The Recipe-Sharing-API, developed using Node.js and Express, offers a platform for users to easily share and manage recipes via a RESTful API. It allows for full CRUD (Create, Read, Update, Delete) operations on recipes and includes features for searching recipes by tags, ingredients, or names. The API is designed with a focus on simplicity and efficiency, making it accessible for both developers and end-users.
 ## 🌟 Features
 
 ### 📚 Recipe Management
