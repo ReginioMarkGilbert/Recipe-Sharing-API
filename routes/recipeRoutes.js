@@ -1,81 +1,49 @@
 /**
- * Router for managing recipe-related endpoints.
- * This module defines routes for handling CRUD operations on recipes.
- * @module routes/recipeRoutes
+ * Routes for Recipe Management
+ * 
+ * These routes handle the web requests to manage recipes in the application. They connect the endpoints with the corresponding
+ * functions in the recipeController. This includes operations such as creating, reading, updating, and deleting recipes.
+ * 
+ * Endpoints:
+ * - GET /recipes: Fetches all recipes.
+ * - GET /recipes/:id: Fetches a single recipe by its unique ID.
+ * - POST /recipes: Creates a new recipe with the provided data in the request body.
+ * - PUT /recipes/:id: Updates an existing recipe identified by its ID with new data provided in the request body.
+ * - DELETE /recipes/:id: Deletes a recipe identified by its ID.
+ * - GET /recipes/title/:title: Fetches a single recipe by its title. This allows for flexible whitespace matching.
+ * - GET /recipes/ingredients/:ingredients: Fetches recipes that contain any of the specified ingredients.
+ * - GET /recipes/tags/:tags: Fetches recipes that are tagged with any of the specified tags.
+ * 
+ * The routes are designed to be RESTful and aim to provide clear and intuitive access to the recipe management functionality.
+ * Each route is mapped to a specific controller function that handles the request and sends back the appropriate response to the client.
  */
 
 const express = require('express');
 const router = express.Router();
 const recipeController = require('../controllers/recipeController');
 
-/**
- * Route to create a new recipe.
- * @name Create Recipe
- * @route {POST} /recipes
- * @description Creates a new recipe.
- */
-router.post('/recipes', recipeController.createRecipe);
-
-/**
- * Route to get all recipes.
- * @name Get All Recipes
- * @route {GET} /recipes
- * @description Retrieves all recipes.
- */
+// Define route to get all recipes
 router.get('/recipes', recipeController.getAllRecipes);
 
-/**
- * Route to get a single recipe by title.
- * @name Get Recipe by Title
- * @route {GET} /recipes/title/:title
- * @description Retrieves a recipe by its title.
- * @param {string} title - The title or name of the recipe.
- */
-router.get('/recipes/title/:title', recipeController.getRecipeByTitle);
-
-/**
- * Route to search for recipes by ingredients.
- * @name Search Recipes by Ingredients
- * @route {GET} /recipes/ingredients/:ingredients
- * @description Searches for recipes by ingredients.
- * @param {string} ingredients - The ingredients to search for.
- */
-router.get('/recipes/ingredients/:ingredients', recipeController.searchByIngredients);
-
-/**
- * Route to get recipes by tag.
- * @name Get Recipes by Tag
- * @route {GET} /recipes/tags/:tag
- * @description Retrieves recipes by tag.
- * @param {string} tag - The tag to filter recipes.
- */
-router.get('/recipes/tags/:tag', recipeController.getRecipesByTag);
-
-/**
- * Route to get a single recipe by ID.
- * @name Get Recipe by ID
- * @route {GET} /recipes/:id
- * @description Retrieves a recipe by its ID.
- * @param {string} id - The ID of the recipe.
- */
+// Define route to get a single recipe by ID
 router.get('/recipes/:id', recipeController.getRecipeById);
 
-/**
- * Route to update a recipe by ID.
- * @name Update Recipe
- * @route {PUT} /recipes/:id
- * @description Updates a recipe by its ID.
- * @param {string} id - The ID of the recipe to update.
- */
+// Define route to create a new recipe
+router.post('/recipes', recipeController.createRecipe);
+
+// Define route to update a recipe
 router.put('/recipes/:id', recipeController.updateRecipe);
 
-/**
- * Route to delete a recipe by ID.
- * @name Delete Recipe
- * @route {DELETE} /recipes/:id
- * @description Deletes a recipe by its ID.
- * @param {string} id - The ID of the recipe to delete.
- */
+// Define route to delete a recipe
 router.delete('/recipes/:id', recipeController.deleteRecipe);
+
+// Define route to get a single recipe by title
+router.get('/recipes/title/:title', recipeController.getRecipeByTitle);
+
+// Define route to get recipes by ingredients
+router.get('/recipes/ingredients/:ingredients', recipeController.getRecipeByIngredients);
+
+// Define route to get recipes by tag
+router.get('/recipes/tags/:tags', recipeController.getRecipesByTag);
 
 module.exports = router;
