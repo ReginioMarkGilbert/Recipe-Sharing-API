@@ -45,13 +45,27 @@ git clone https://github.com/ReginioMarkGilbert/Recipe-Sharing-API.git
 
 2. **Install Dependencies**: Install with [npm](https://www.npmjs.com/):
 ```bash
-npm install
+npm install express
+```
+```bash
+npm install nodemon
+```
+```bash
+npm install joi
 ```
 
 3. **Start the Server**: Use npm start for production or npm run dev for development with nodemon.
 
 ```bash
 npm run dev
+```
+**Alternatively, you can run the API using this command:**:
+```bash
+npm run start
+```
+Or:
+```bash
+node app.js
 ```
 
 The server will start, and you should see a message like <span style="color:green"><strong>"Server is running on port: 3000"</strong></span> in your terminal.
