@@ -1,6 +1,6 @@
-# 🍤 Recipe Sharing API
+# 🍛 Recipe Sharing API
 
-# Group Members
+## Group Members
 
 - **👤 [Mark Gilbert Reginio](https://www.facebook.com/Endzy.ML.1?mibextid=LQQJ4d)**
 - **👤 [Ahmad Magdalita](https://www.facebook.com/profile.php?id=100040213292094&mibextid=LQQJ4d)**
@@ -18,6 +18,7 @@ The Recipe-Sharing-API is a RESTful API developed as part of a group performance
 ### Advanced Search Capabilities
 - **Tag-based Search**: Allows users to find recipes based on specific tags (e.g., Vegan, Gluten-free), making it easier to discover recipes that meet their dietary preferences.
 - **Ingredients-based Search**: Enables searching for recipes by ingredients. Users can find recipes that use specific ingredients they have or want to use.
+- **Name-based Search**: Provides the ability to search for recipes using the name of the recipe, allowing users to quickly find specific recipes they are interested in.
 ### User Experience
 - **Error Handling**: Implements comprehensive error handling throughout the API to provide clear feedback to the client, ensuring a smooth user experience even when things go wrong.
 - **Environment Variable Support**: Configuration options like server port and database URI are set via environment variables, offering flexibility and security for deployment.
@@ -49,7 +50,10 @@ git clone https://github.com/ReginioMarkGilbert/Recipe-Sharing-API.git
 npm install
 ```
 
-3. **Set Environment Variables**: Configure .env file with your PORT and MONGODB_URI.
+3. **Set Environment Variables**: Configure .env file with your PORT and MONGODB_URI. Replace <user> with your username and <password> with your password:
+```bash
+MONGODB_URI=mongodb+srv://<user></user>:<password>@<yourDataBasename>.cnzedyb.mongodb.net/?retryWrites=true&w=majority
+```
 
 4. **Start the Server**: Use npm start for production or npm run dev for development with nodemon.
 
@@ -57,7 +61,7 @@ npm install
 npm run dev
 ```
 
-The server will start, and you should see a message like <span style="color:green"><strong>Server is running on port 3000</strong></span> in your terminal.
+The server will start, and you should see a message like <span style="color:green"><strong>"Server is running on port 3000"</strong></span> in your terminal.
 
 5. **Test the Application**: You can now test the application by sending requests to <span style="color:green"><strong>http://localhost:3000/api/recipes</strong></span>. You can use a tool like Postman or Insomnia to send HTTP requests.
 
