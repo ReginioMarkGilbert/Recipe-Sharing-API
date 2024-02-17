@@ -43,7 +43,7 @@ Follow these steps to set up the application locally:
 git clone https://github.com/ReginioMarkGilbert/Recipe-Sharing-API.git
 ```
 
-2. **Install Dependencies**: Install with [npm](https://www.npmjs.com/):
+2. **Install Dependencies**: Install with [npm](https://www.npmjs.com/).
 ```bash
 npm install express
 ```
@@ -59,7 +59,7 @@ npm install joi
 ```bash
 npm run dev
 ```
-**Alternatively, you can run the API using this command:**:
+Alternatively, you can run the API using this command:
 ```bash
 npm run start
 ```
@@ -70,25 +70,19 @@ node app.js
 
 The server will start, and you should see a message like <span style="color:green"><strong>"Server is running on port: 3000"</strong></span> in your terminal.
 
-5. **Test the Application**: You can now test the application by sending requests to <span style="color:green"><strong>http://localhost:3000/api/recipes</strong></span>. You can use a tool like Postman or Insomnia to send HTTP requests.
+4. **Test the Application**: You can now test the application by sending requests to <span style="color:green"><strong>http://localhost:3000/api/recipes</strong></span>. You can use a tool like Postman or Insomnia to send HTTP requests.
 
 
 # 🔭 Recipe API Endpoint Guide
 
-This application provides several API endpoints for managing recipes:
-
-This API allows you to manage recipes. Here's how you can use the endpoints:
+This application provides several API endpoints for managing recipes, Here's how you can use the endpoints:
 
 ## Create a New Recipe
 
 **Endpoint:** `/api/recipes`
-
 **Method:** `POST`
-
 **Description:** Creates a new recipe.
-
 **Body:**
-
 - `title`: The name of the recipe (required).
 - `ingredients`: The ingredients of the recipe (required).
 - `instructions`: The instructions of the recipe (required).
@@ -97,88 +91,61 @@ This API allows you to manage recipes. Here's how you can use the endpoints:
 ## Get All Recipes:
 
 **Endpoint:** `/api/recipes`
-
 **Method:** `GET`
-
 **Description:** Returns all recipes.
 
 ## Get a Specific Recipe by ID:
 
 **Endpoint:** `/api/recipes/:id`
-
 **Method:** `GET`
-
 **Description:** Returns the recipe with the specified ID.
-
 **Parameters:**
-
 - `id`: The ID of the recipe.
 
 ## Get Recipes by Title:
 
 **Endpoint:** `/api/recipes/title/:title`
-
 **Method:** `GET`
-
 **Description:** Returns recipes with the specified title or name.
-
 **Parameters:**
-
 - `title`: The title or name of the recipe.
 
 ## Get Recipes by Ingredients:
 
 **Endpoint:** `api/recipes/ingredients/:ingredients`
-
 **Method:** `GET`
-
 **Description:** Returns one or more recipes that contain the specified ingredients.
-
 **Parameters:**
-
 - `ingredients`: The ingredients of the recipe.
 
 ## 🏷 Get Recipes by Tag
 
 **Endpoint:** `/api/recipes/tags/:tags`
-
 **Method:** `GET`
-
 **Description:** Returns one or more recipes that contain the specified tag.
-
 **Parameters:**
-
 - `tag`: The tag of the recipe.
 
 ## Update a Recipe
 
 **Endpoint:** `/api/recipes/:id`
-
 **Method:** `PUT`
-
 **Description:** Updates the recipe with the specified ID.
-
 **Parameters:**
-
 - `id`: The ID of the recipe.
-
 **Body:**
 
-- `name`: The name of the recipe (optional).
+- `Title`: The name of the recipe (optional).
 - `ingredients`: The ingredients of the recipe (optional).
-- `steps`: The steps of the recipe (optional).
+- `instructions`: The steps of the recipe (optional).
 - `tags`: The tags of the recipe (optional).
 
 ## Delete a Recipe
 
 **Endpoint:** `/api/recipes/:id`
-
 **Method:** `DELETE`
-
 **Description:** Deletes the recipe with the specified ID.
-
 **Parameters:**
-
 - `id`: The ID of the recipe.
 
 
@@ -188,7 +155,7 @@ This project uses several dependencies to function correctly. Here's a brief des
 
 ## Dependencies
 
-### 🚀 express
+### 🚀 Express
 
 **Version:** ^4.18.2
 
