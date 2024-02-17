@@ -75,14 +75,18 @@ The server will start, and you should see a message like <span style="color:gree
 
 # 🔭 Recipe API Endpoint Guide
 
-This application provides several API endpoints for managing recipes, Here's how you can use the endpoints:
+This application provides several API endpoints for managing recipes, here's how you can use the endpoints:
 
 ## Create a New Recipe
 
 **Endpoint:** `/api/recipes`
+
 **Method:** `POST`
+
 **Description:** Creates a new recipe.
+
 **Body:**
+
 - `title`: The name of the recipe (required).
 - `ingredients`: The ingredients of the recipe (required).
 - `instructions`: The instructions of the recipe (required).
@@ -91,61 +95,88 @@ This application provides several API endpoints for managing recipes, Here's how
 ## Get All Recipes:
 
 **Endpoint:** `/api/recipes`
+
 **Method:** `GET`
+
 **Description:** Returns all recipes.
 
 ## Get a Specific Recipe by ID:
 
 **Endpoint:** `/api/recipes/:id`
+
 **Method:** `GET`
+
 **Description:** Returns the recipe with the specified ID.
+
 **Parameters:**
+
 - `id`: The ID of the recipe.
 
 ## Get Recipes by Title:
 
 **Endpoint:** `/api/recipes/title/:title`
+
 **Method:** `GET`
+
 **Description:** Returns recipes with the specified title or name.
+
 **Parameters:**
+
 - `title`: The title or name of the recipe.
 
 ## Get Recipes by Ingredients:
 
 **Endpoint:** `api/recipes/ingredients/:ingredients`
+
 **Method:** `GET`
+
 **Description:** Returns one or more recipes that contain the specified ingredients.
+
 **Parameters:**
+
 - `ingredients`: The ingredients of the recipe.
 
 ## 🏷 Get Recipes by Tag
 
 **Endpoint:** `/api/recipes/tags/:tags`
+
 **Method:** `GET`
+
 **Description:** Returns one or more recipes that contain the specified tag.
+
 **Parameters:**
+
 - `tag`: The tag of the recipe.
 
 ## Update a Recipe
 
 **Endpoint:** `/api/recipes/:id`
+
 **Method:** `PUT`
+
 **Description:** Updates the recipe with the specified ID.
+
 **Parameters:**
+
 - `id`: The ID of the recipe.
+
 **Body:**
 
 - `Title`: The name of the recipe (optional).
 - `ingredients`: The ingredients of the recipe (optional).
-- `instructions`: The steps of the recipe (optional).
+- `Instructions`: The steps of the recipe (optional).
 - `tags`: The tags of the recipe (optional).
 
 ## Delete a Recipe
 
 **Endpoint:** `/api/recipes/:id`
+
 **Method:** `DELETE`
+
 **Description:** Deletes the recipe with the specified ID.
+
 **Parameters:**
+
 - `id`: The ID of the recipe.
 
 
@@ -179,7 +210,7 @@ npm i joi
 
 ## 🔧 DevDependencies
 
-### 🤖 nodemon
+### 🤖 Nodemon
 
 **Version:** ^3.0.3
 
