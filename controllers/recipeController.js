@@ -30,7 +30,7 @@
  * Each function is wrapped in a try-catch block to handle and respond with appropriate HTTP status codes and error messages.
  * 
  * Note: This controller assumes the existence of a `recipesData` array for storing recipe objects. In a real-world application,
- * this would likely be replaced with database operations.
+ * this would likely be replaced with database operations. This uses data that are stored in json file only not a database.
  */
 
 const Joi = require("joi");
